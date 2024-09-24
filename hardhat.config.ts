@@ -1,4 +1,3 @@
-import { ethers } from "ethers";
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
@@ -12,7 +11,6 @@ const config: HardhatUserConfig = {
       },
       accounts: {
         count: 1000,
-        accountsBalance: ethers.utils.parseUnits("10000", "ether").toString(),
       },
     },
   },
