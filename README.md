@@ -1,4 +1,4 @@
-# LayerZero Test Contracts
+# LayerZero Cross Chain Protocol
 
 This repository contains two Solidity smart contracts that demonstrate cross-chain communication using the LayerZero protocol. These contracts are designed to operate on different Ethereum test networks and allow for message passing and token bridging between chains.
 
