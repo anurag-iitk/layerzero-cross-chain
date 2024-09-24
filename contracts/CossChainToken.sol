@@ -27,4 +27,24 @@ abstract contract LayerZeroTestContract is NonblockingLzApp, ERC20 {
         (address account, uint amount) = abi.decode(_payload, (address, uint));
         _mint(account, amount);
     }
+
+    function bridge(uint _amount) public payable {
+        _burn(msg.sender, _amount);
+        bytes memory payload = abi.encode(msg.sender, _amount);
+        _lzSend(
+            dstChainId,
+            payload,
+            payable(msg.sender),
+            address(0x0),
+            bytes(""),
+            msg.value
+        );
+    }
+
+    function trustAddress(address _otherContract) public onlyOwner {
+        trustedRemoteLookup[dstChainId] = abi.encodePacked(
+            _otherContract,
+            address(this)
+        );
+    }
 }
