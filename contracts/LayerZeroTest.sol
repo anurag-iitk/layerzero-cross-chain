@@ -5,8 +5,8 @@ pragma solidity ^0.8.27;
 import "../node_modules/@layerzerolabs/solidity-examples/contracts/lzApp/NonblockingLzApp.sol";
 
 /*
-Optimism Goerli - chain ID is 10132, and the endpoint is 0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1.
-Goerli - 0xbfD2135BFfbb0B5378b56643c2Df8a87552Bfa23 and chainId is 10121
+Optimism - chain ID is 10232, and the endpoint is 0x55370E0fBB5f5b8dAeD978BA1c075a499eB107B8.
+Arbitrum - 0x6098e96a28E02f27B1e6BD381f870F1C8Bd169d3 and chainId is 10231
 */
 
 contract LayerZeroTestContract is NonblockingLzApp {
@@ -14,10 +14,10 @@ contract LayerZeroTestContract is NonblockingLzApp {
     uint16 dstChainId;
 
     constructor(address _endpoint) NonblockingLzApp(_endpoint) {
-        if (_endpoint == 0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1)
-            dstChainId = 10121;
-        if (_endpoint == 0xbfD2135BFfbb0B5378b56643c2Df8a87552Bfa23)
-            dstChainId = 10132;
+        if (_endpoint == 0x55370E0fBB5f5b8dAeD978BA1c075a499eB107B8)
+            dstChainId = 10231;
+        if (_endpoint == 0x6098e96a28E02f27B1e6BD381f870F1C8Bd169d3)
+            dstChainId = 10232;
     }
 
     function _nonblockingLzReceive(

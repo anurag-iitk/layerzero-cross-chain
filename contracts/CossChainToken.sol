@@ -5,16 +5,17 @@ pragma solidity ^0.8.27;
 import "../node_modules/@layerzerolabs/solidity-examples/contracts/lzApp/NonblockingLzApp.sol";
 import "../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-abstract contract LayerZeroTestContract is NonblockingLzApp, ERC20 {
+contract CrossChainToken is NonblockingLzApp, ERC20 {
     uint16 dstChainId;
 
     constructor(
         address _endpoint
     ) NonblockingLzApp(_endpoint) ERC20("MyToken", "TKN") {
-        if (_endpoint == 0xae92d5aD7583AD66E49A0c67BAd18F6ba52dDDc1)
-            dstChainId = 10121;
-        if (_endpoint == 0xbfD2135BFfbb0B5378b56643c2Df8a87552Bfa23)
-            dstChainId = 10132;
+        if (_endpoint == 0x55370E0fBB5f5b8dAeD978BA1c075a499eB107B8)
+            dstChainId = 10231;
+        if (_endpoint == 0x6098e96a28E02f27B1e6BD381f870F1C8Bd169d3)
+            dstChainId = 10232;
+
         _mint(msg.sender, 100000 * 10 ** decimals());
     }
 
