@@ -92,5 +92,5 @@ This contract extends the `ERC20` standard and the `NonblockingLzApp` to facilit
    You can deploy the contracts using the Hardhat deployment scripts. Configure the network settings in `hardhat.config.ts` and run:
 
    ```bash
-   npx hardhat run scripts/deploy.js --network <network-name>
+   npx hardhat run ignition/modules/deploy.ts --network <network-name>
    ```
